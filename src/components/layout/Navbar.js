@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { MdMenu, MdClose } from "react-icons/md";
 import { SITE_CONFIG } from "@/data/constants";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,16 +20,24 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white shadow-md">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto ">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link
-            href="/"
-            className="text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors"
-          >
-            {SITE_CONFIG.siteName.split(" ")[0]}
-            <span className="text-emerald-500">+</span>
-          </Link>
+          <div className="flex items-center gap-1">
+            <Image
+              src={"/AL-SEHFALOGO.svg"}
+              alt="logo"
+              height={40}
+              width={40}
+            />
+            <Link
+              href="/"
+              className="text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors"
+            >
+              {SITE_CONFIG.siteName.split(" ")[0]}
+              <span className="text-emerald-500">+</span>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex gap-8">

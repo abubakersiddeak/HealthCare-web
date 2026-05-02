@@ -13,6 +13,8 @@ import {
   MdVerified,
 } from "react-icons/md";
 import { SITE_CONFIG } from "@/data/constants";
+import { Test } from "@/data/test";
+import Image from "next/image";
 
 const container = {
   hidden: { opacity: 0 },
@@ -39,9 +41,9 @@ const highlights = [
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-[url('/herobg.webp')] bg-cover bg-center px-4 py-13 ">
+    <section className="relative  flex justify-center items-center min-h-[75vh] overflow-hidden bg-[url('/herobg.webp')] bg-cover bg-center px-4 py-13 ">
       <div className="absolute inset-0 bg-black/30"></div>
-      <div className="">
+      <div className="my-auto">
         <motion.div
           className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]"
           variants={container}
@@ -51,9 +53,9 @@ export default function HeroSection() {
           <div>
             <motion.h1
               variants={fadeUp}
-              className="max-w-3xl text-4xl font-black leading-tight text-white md:text-6xl"
+              className="max-w-3xl text-4xl font-black leading-tight text-white md:text-5xl"
             >
-              Caring nursing home for your family&apos;s health.
+              {SITE_CONFIG.siteName} for your family&apos;s health.
             </motion.h1>
 
             <motion.p
@@ -108,97 +110,101 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          <motion.div variants={fadeUp} className="relative">
-            <div className="relative overflow-hidden rounded-lg border border-blue-100 bg-white p-4 shadow-2xl shadow-blue-200/60">
-              <div className="relative min-h-[430px] overflow-hidden rounded-lg bg-gradient-to-b from-sky-100 via-white to-emerald-50">
-                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-emerald-100 to-emerald-200" />
+          <motion.div
+            variants={fadeUp}
+            className="w-full max-w-5xl mx-auto md:px-0"
+          >
+            <div className="relative rounded-2xl bg-white/60 backdrop-blur-xl border border-white/40 shadow-[0_20px_60px_rgba(0,0,0,0.08)] overflow-hidden">
+              {/* 🔷 Glow Background */}
+              <div className="absolute -top-20 -left-20 w-72 h-72 bg-blue-300/30 rounded-full blur-3xl" />
+              <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-emerald-300/30 rounded-full blur-3xl" />
 
-                <motion.div
-                  className="absolute left-8 right-8 top-12 rounded-lg bg-white shadow-xl"
-                  initial={{ y: 18, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.45, duration: 0.7 }}
-                >
-                  <div className="rounded-t-lg bg-blue-600 px-6 py-4 text-white">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <span className="rounded-lg bg-white p-2 text-blue-600">
-                          <MdLocalHospital className="text-3xl" />
-                        </span>
-                        <div>
-                          <p className="text-sm text-blue-100">Welcome to</p>
-                          <h2 className="text-xl font-black">
-                            HealthCare Plus
-                          </h2>
-                        </div>
-                      </div>
-                      <span className="rounded-full bg-red-500 px-3 py-1 text-xs font-bold">
-                        ER
-                      </span>
-                    </div>
+              {/* 🔷 Header */}
+              <div className="relative z-10 flex items-center justify-between px-5 py-4 border-b border-white/40">
+                <div className="flex items-center gap-3">
+                  <div className="bg-blue-600 text-white p-2.5 rounded-xl shadow-lg">
+                    <MdLocalHospital className="text-2xl" />
                   </div>
+                  <div>
+                    <h2 className="text-lg md:text-2xl font-semibold text-slate-800">
+                      Health Interface
+                    </h2>
+                    <p className="text-[10px] md:text-[15px] text-slate-700">
+                      Smart Diagnostic System
+                    </p>
+                  </div>
+                </div>
 
-                  <div className="grid grid-cols-5 gap-3 p-6">
-                    {Array.from({ length: 15 }).map((_, index) => (
-                      <div
-                        key={index}
-                        className="h-10 rounded-md border border-blue-100 bg-blue-50"
+                <span className="text-[15px] bg-emerald-100/70 text-emerald-600 px-2 py-1 rounded-full backdrop-blur">
+                  ● Live
+                </span>
+              </div>
+
+              {/*  Services Grid */}
+              <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 p-4 md:p-6">
+                {Test.map((t, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.03 }}
+                    className="group relative rounded-xl h-20 md:h-28 2xl:h-38 overflow-hidden border border-white/40 bg-white/50 backdrop-blur shadow-sm"
+                  >
+                    <div className="relative w-full h-full ">
+                      <Image
+                        src={t.image}
+                        alt={t.title}
+                        fill
+                        className="object-cover transition duration-500 group-hover:scale-110"
                       />
-                    ))}
-                  </div>
 
-                  <div className="mx-auto mb-6 flex h-20 w-28 items-center justify-center rounded-t-lg bg-slate-800 text-white">
-                    <MdMedicalServices className="text-4xl" />
-                  </div>
-                </motion.div>
+                      {/* overlay glow */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    </div>
 
+                    <div className="p-3">
+                      <p className="text-xs md:text-sm font-extrabold text-white absolute bottom-2 left-3">
+                        {t.title}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Floating Info Cards */}
+              <div className="relative z-10 grid md:grid-cols-2 gap-3 px-4 pb-5">
+                {/* Nursing */}
                 <motion.div
-                  className="absolute bottom-12 left-10 w-52 rounded-lg bg-white p-4 shadow-xl"
-                  animate={{ y: [0, -7, 0] }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
+                  className="flex items-center justify-between rounded-xl bg-white/60 backdrop-blur border border-white/40 p-3 shadow-md"
+                  animate={{ y: [0, -4, 0] }}
+                  transition={{ duration: 3, repeat: Infinity }}
                 >
-                  <div className="mb-3 flex items-center gap-3">
-                    <span className="rounded-full bg-emerald-100 p-2 text-emerald-600">
-                      <MdVerified className="text-xl" />
+                  <div className="flex items-center gap-3">
+                    <span className="bg-emerald-100/70 text-emerald-600 p-2 rounded-full">
+                      <MdVerified />
                     </span>
                     <div>
-                      <p className="text-xs text-slate-500">Nursing Care</p>
-                      <p className="font-bold text-slate-900">
-                        Always Available
+                      <p className="text-[15px] text-slate-500">Nursing</p>
+                      <p className="text-sm font-semibold text-slate-800">
+                        Always Ready
                       </p>
                     </div>
                   </div>
-                  <div className="h-2 rounded-full bg-emerald-100">
-                    <motion.div
-                      className="h-2 w-4/5 rounded-full bg-emerald-500"
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: 1 }}
-                      transition={{ delay: 0.8, duration: 0.8 }}
-                      style={{ transformOrigin: "left" }}
-                    />
-                  </div>
                 </motion.div>
 
+                {/* Ambulance */}
                 <motion.div
-                  className="absolute bottom-12 right-8 rounded-lg bg-white p-4 shadow-xl"
-                  animate={{ x: [0, -8, 0] }}
-                  transition={{
-                    duration: 3.4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
+                  className="flex items-center justify-between rounded-xl bg-white/60 backdrop-blur border border-white/40 p-3 shadow-md"
+                  animate={{ x: [0, -4, 0] }}
+                  transition={{ duration: 3.5, repeat: Infinity }}
                 >
                   <div className="flex items-center gap-3">
-                    <span className="rounded-lg bg-red-50 p-2 text-red-600">
-                      <MdLocalShipping className="text-3xl" />
+                    <span className="bg-red-100/70 text-red-600 p-2 rounded-lg">
+                      <MdLocalShipping />
                     </span>
                     <div>
-                      <p className="text-xs text-slate-500">Ambulance</p>
-                      <p className="font-bold text-slate-900">Ready 24/7</p>
+                      <p className="text-[15px] text-slate-500">Ambulance</p>
+                      <p className="text-sm font-semibold text-slate-800">
+                        24/7 Active
+                      </p>
                     </div>
                   </div>
                 </motion.div>

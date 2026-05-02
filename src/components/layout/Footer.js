@@ -1,17 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import {
-  MdPhone,
-  MdEmail,
-  MdLocationOn,
-} from "react-icons/md";
-import {
-  FaFacebook,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedin,
-} from "react-icons/fa";
+import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { COPYRIGHT_YEAR, SITE_CONFIG, SOCIAL_MEDIA } from "@/data/constants";
 
 export default function Footer() {
@@ -22,7 +13,7 @@ export default function Footer() {
           {/* About */}
           <div>
             <h3 className="text-xl font-bold text-blue-400 mb-4">
-              {SITE_CONFIG.siteName.split(" ")[0]}+
+              {SITE_CONFIG.siteName}
             </h3>
             <p className="text-gray-400">{SITE_CONFIG.tagline}</p>
           </div>
