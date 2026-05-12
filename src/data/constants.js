@@ -1,10 +1,10 @@
 export const SITE_CONFIG = {
-  siteName: "Talukker Clinic & Nursing Home",
+  siteName: "Talukder Clinic & Nursing Home",
   tagline: "Your Health, Our Priority",
   emergencyNumber: "+1 (555) 123-4567",
   generalPhone: "+1 (555) 123-7890",
-  email: "talukker@healthcare.com",
-  address: "Talukdar market, puraton bus stand, Tangail",
+  email: "talukder@healthcare.com",
+  address: "Talukder market, puraton bus stand, Tangail",
   googleMapsAddress:
     "https://www.google.com/maps/place/Talukder+Clinic+And+Nursing+Home/@24.2516947,89.9199099,8z/data=!4m10!1m2!2m1!1stalukdar+clinic+%26+nursing+home!3m6!1s0x39fdfb00115d71b3:0x397c3117629234b4!8m2!3d24.2516603!4d89.9199755!15sCh50YWx1a2RhciBjbGluaWMgJiBudXJzaW5nIGhvbWWSAQhob3NwaXRhbOABAA!16s%2Fg%2F11yy3jhlby?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D",
   googleMapsEmbed:
