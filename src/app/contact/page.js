@@ -11,7 +11,6 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -24,18 +23,26 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      }),
+    });
     setSubmitted(true);
-    setTimeout(() => {
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
+    if (response.ok) {
       setSubmitted(false);
-    }, 3000);
+      alert("Message sent successfully!");
+    } else {
+      setSubmitted(false);
+      alert("Error sending message.");
+    }
   };
 
   return (
@@ -59,7 +66,9 @@ export default function Contact() {
                 <p className="text-gray-700 mb-2">
                   Your message has been sent successfully.
                 </p>
-                <p className="text-gray-600">We&rsquo;ll get back to you soon.</p>
+                <p className="text-gray-600">
+                  We&rsquo;ll get back to you soon.
+                </p>
               </div>
             ) : (
               <form
@@ -93,21 +102,6 @@ export default function Contact() {
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600"
                     placeholder="your@email.com"
-                  />
-                </div>
-
-                <div className="mb-6">
-                  <label className="block text-gray-900 font-semibold mb-2">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600"
-                    placeholder="(555) 123-4567"
                   />
                 </div>
 

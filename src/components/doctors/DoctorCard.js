@@ -11,15 +11,16 @@ export default function DoctorCard({ doctor }) {
 
   return (
     <Card>
-      <div
-        className={`mb-4 flex h-40 items-center justify-center rounded-lg bg-gradient-to-br ${
-          doctor.accent || "from-blue-500 to-emerald-400"
-        }`}
-        aria-label={doctor.name}
-      >
-        <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/90 text-2xl font-black text-blue-700 shadow-lg">
-          {initials || <MdPerson />}
-        </div>
+      <div>
+        {" "}
+        <img
+          src={
+            doctor.avatar ||
+            "https://i.ibb.co.com/20yB5J5L/vecteezy-man-empty-avatar-vector-photo-placeholder-for-social-36594092.webp"
+          }
+          alt={doctor.name}
+          className="h-50 w-full"
+        />
       </div>
       <h3 className="text-xl font-bold text-gray-900 mb-2">{doctor.name}</h3>
       <p className="text-blue-600 font-semibold mb-3">{doctor.specialty}</p>
