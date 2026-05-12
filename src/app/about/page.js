@@ -1,148 +1,143 @@
 import PageHeading from "@/components/common/PageHeading";
 import { COPYRIGHT_YEAR, SITE_CONFIG, QUICK_STATS } from "@/data/constants";
-import { MdHealthAndSafety, MdLocalHospital, MdMonitorHeart } from "react-icons/md";
+import Image from "next/image";
+import {
+  MdHealthAndSafety,
+  MdLocalHospital,
+  MdMonitorHeart,
+  MdHistory,
+} from "react-icons/md";
 
 export default function About() {
   return (
     <>
       <PageHeading
-        title="About Us"
-        description="Learn more about our mission and commitment to healthcare"
+        title="Our Journey & Mission"
+        description={`Evolving from Al-Shifa to ${SITE_CONFIG.siteName} — better care for your family.`}
       />
+
       <div className="max-w-6xl mx-auto px-4 py-16">
-        {/* About Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-          <div className="rounded-lg bg-gradient-to-br from-blue-600 via-cyan-500 to-emerald-400 p-8 text-white shadow-lg">
-            <div className="rounded-lg border border-white/20 bg-white/15 p-6 backdrop-blur">
-              <MdLocalHospital className="mb-8 text-6xl" />
-              <p className="text-sm font-semibold uppercase tracking-widest text-blue-50">
-                Modern Nursing Home
+        {/* Rebranding / Evolution Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20 items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-bold mb-6">
+              <MdHistory className="text-lg" />
+              Our Evolution
+            </div>
+            <h2 className="text-4xl font-black text-gray-900 mb-6 leading-tight">
+              A New Chapter in Healthcare: <br />
+              <span className="text-blue-600">
+                From Al-Shifa to Talukdar Clinic
+              </span>
+            </h2>
+            <p className="text-gray-700 text-lg mb-4">
+              For years, we served this community faithfully as{" "}
+              <strong>Al-Shifa Clinic</strong>. Today, we are proud to announce
+              our rebranding to <strong>{SITE_CONFIG.siteName}</strong>.
+            </p>
+            <p className="text-gray-700 text-lg mb-4">
+              This change isn't just about a new name; it’s about an upgraded
+              commitment. We’ve expanded our nursing care, modernized our wards,
+              and brought in specialized diagnostics to ensure that the legacy
+              of trust built under Al-Shifa continues with even higher
+              standards.
+            </p>
+            <div className="border-l-4 border-emerald-500 pl-4 py-2 italic text-gray-600">
+              "The same expert doctors, the same caring staff, now with a vision
+              for the future."
+            </div>
+          </div>
+
+          <div className="rounded-2xl bg-gradient-to-br from-slate-900 via-blue-900 to-blue-700 p-8 text-white shadow-2xl relative overflow-hidden">
+            {/* Decorative Background Element */}
+            <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
+
+            <div className="relative z-10 rounded-xl border border-white/10 bg-white/10 p-6 backdrop-blur-md">
+              <MdLocalHospital className="mb-8 text-6xl text-emerald-400" />
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-200">
+                Enhanced Facilities
               </p>
-              <h2 className="mt-3 text-4xl font-black leading-tight">
-                Care spaces designed for calm, safety, and speed.
+              <h2 className="mt-3 text-3xl font-black leading-tight">
+                Modern Nursing Home & Diagnostic Center.
               </h2>
-              <div className="mt-8 grid grid-cols-2 gap-4">
-                <div className="rounded-lg bg-white/15 p-4">
-                  <MdHealthAndSafety className="mb-2 text-3xl" />
-                  <p className="font-semibold">Patient-first care</p>
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="rounded-lg bg-white/5 p-4 border border-white/5 hover:bg-white/10 transition">
+                  <MdHealthAndSafety className="mb-2 text-3xl text-emerald-400" />
+                  <p className="font-bold">24/7 Patient Monitoring</p>
                 </div>
-                <div className="rounded-lg bg-white/15 p-4">
-                  <MdMonitorHeart className="mb-2 text-3xl" />
-                  <p className="font-semibold">Modern monitoring</p>
+                <div className="rounded-lg bg-white/5 p-4 border border-white/5 hover:bg-white/10 transition">
+                  <MdMonitorHeart className="mb-2 text-3xl text-blue-400" />
+                  <p className="font-bold">Specialized Diagnostics</p>
                 </div>
               </div>
             </div>
-          </div>
-          <div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Welcome to {SITE_CONFIG.siteName}
-            </h2>
-            <p className="text-gray-700 text-lg mb-4">
-              Founded in{" "}
-              {COPYRIGHT_YEAR - QUICK_STATS.yearsInOperation},
-              we have been committed to providing the highest quality healthcare
-              services to our community. With over{" "}
-              {QUICK_STATS.yearsInOperation} years of experience, we have earned
-              the trust of thousands of patients.
-            </p>
-            <p className="text-gray-700 text-lg mb-4">
-              Our state-of-the-art facilities combined with a dedicated team of
-              medical professionals ensure that every patient receives
-              personalized and compassionate care. We believe that good health
-              is fundamental to a happy life.
-            </p>
-            <p className="text-gray-700 text-lg">
-              Whether you need emergency care, routine checkups, or specialized
-              treatment, we are here to support your health journey every step
-              of the way.
-            </p>
           </div>
         </div>
 
         {/* Mission & Vision */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-          <div className="bg-blue-50 rounded-lg p-8">
-            <h3 className="text-2xl font-bold text-blue-600 mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div className="bg-white border border-slate-100 shadow-sm rounded-2xl p-8">
+            <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white mb-6">
+              <MdHealthAndSafety size={24} />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Our Mission
             </h3>
-            <p className="text-gray-700">
+            <p className="text-gray-600 leading-relaxed">
               To provide accessible, affordable, and high-quality healthcare
-              services to all members of our community, with a focus on patient
-              satisfaction and medical excellence.
+              services to all members of our community, ensuring that the
+              transition to {SITE_CONFIG.siteName} brings even better medical
+              excellence to our patients.
             </p>
           </div>
-          <div className="bg-emerald-50 rounded-lg p-8">
-            <h3 className="text-2xl font-bold text-emerald-600 mb-4">
+          <div className="bg-white border border-slate-100 shadow-sm rounded-2xl p-8">
+            <div className="w-12 h-12 bg-emerald-600 rounded-xl flex items-center justify-center text-white mb-6">
+              <MdMonitorHeart size={24} />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Our Vision
             </h3>
-            <p className="text-gray-700">
-              To be the most trusted healthcare provider in the region, known
-              for innovation, compassion, and exceptional patient outcomes.
+            <p className="text-gray-600 leading-relaxed">
+              To be the region&apos;s most trusted medical hub, recognized for
+              combining compassionate nursing care with modern diagnostic
+              innovation to achieve exceptional patient outcomes.
             </p>
-          </div>
-        </div>
-
-        {/* Statistics */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg p-12 mb-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2">
-                {QUICK_STATS.yearsInOperation}+
-              </div>
-              <p className="text-blue-100">Years of Service</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">
-                {QUICK_STATS.doctorsCount}
-              </div>
-              <p className="text-blue-100">Expert Doctors</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">
-                {QUICK_STATS.patientsServed}
-              </div>
-              <p className="text-blue-100">Patients Served</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">
-                {QUICK_STATS.departments}
-              </div>
-              <p className="text-blue-100">Departments</p>
-            </div>
           </div>
         </div>
 
         {/* Director's Message */}
-        <div className="bg-gray-50 rounded-lg p-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex min-h-64 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-500 to-blue-600 shadow-lg">
-              <div className="flex h-28 w-28 items-center justify-center rounded-full bg-white text-3xl font-black text-blue-700 shadow-xl">
-                RS
+        <div className="bg-slate-50 rounded-3xl p-8 md:p-12 border border-slate-200">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-blue-600 rounded-2xl rotate-3 group-hover:rotate-6 transition-transform"></div>
+              <div className="relative aspect-square flex items-center justify-center rounded-2xl bg-white shadow-xl overflow-hidden">
+                <span className="text-5xl font-black text-blue-600">
+                  <Image
+                    src={"/tcnh.png"}
+                    alt="tcnh logo"
+                    height={500}
+                    width={500}
+                    className="h-full w-full"
+                  />
+                </span>
+                {/* Once you have a photo, replace the span above with an <Image /> */}
               </div>
             </div>
             <div className="md:col-span-2">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Director&rsquo;s Message
+              <h3 className="text-3xl font-black text-slate-900 mb-6">
+                A Message from the Management
               </h3>
-              <p className="text-gray-700 mb-4">Dear Valued Patients,</p>
-              <p className="text-gray-700 mb-4">
-                As the Director of {SITE_CONFIG.siteName}, I am proud to lead an
-                organization dedicated to transforming healthcare. Our
-                commitment to excellence, combined with our team&rsquo;s unwavering
-                dedication, ensures that every patient receives world-class
-                treatment.
+              <p className="text-gray-700 mb-4 leading-relaxed">
+                &quot;Welcoming you to <strong>{SITE_CONFIG.siteName}</strong>{" "}
+                is a moment of great pride for us. As we transition from our
+                roots at Al-Shifa, we carry forward a legacy of healing while
+                embracing a future of modern nursing and diagnostic
+                excellence.&quot;
               </p>
-              <p className="text-gray-700">
-                We continuously invest in modern technology and staff training
-                to stay at the forefront of medical science. Your health and
-                happiness are our ultimate goals.
-              </p>
-              <p className="text-gray-700 font-semibold mt-6">
-                Dr. Rajesh Sharma
-                <br />
-                <span className="text-blue-600">
-                  Director & Chief Medical Officer
-                </span>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                Our team of caring nurses and experienced doctors are dedicated
+                to making your recovery as smooth as possible. We believe in
+                safe health services, available for you, always.
               </p>
             </div>
           </div>

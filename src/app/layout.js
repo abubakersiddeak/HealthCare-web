@@ -4,13 +4,13 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Al-Shefa Clinic & Nursing Home",
+  title: "Talukder Clinic & Nursing Home",
   description:
     "24/7 medical care with expert doctors and modern facilities. Book appointments online.",
   icons: {
-    icon: "/AL-SEHFALOGO.svg",
-    shortcut: "/AL-SEHFALOGO.svg",
-    apple: "/AL-SEHFALOGO.svg",
+    icon: "/tcnh.png",
+    shortcut: "/tcnh.png",
+    apple: "/tcnh.png",
   },
 };
 

@@ -1,14 +1,14 @@
 export const SITE_CONFIG = {
-  siteName: "Al-Shefa Clinic & Nursing Home",
+  siteName: "Talukker Clinic & Nursing Home",
   tagline: "Your Health, Our Priority",
   emergencyNumber: "+1 (555) 123-4567",
   generalPhone: "+1 (555) 123-7890",
-  email: "alshefa@healthcare.com",
+  email: "talukker@healthcare.com",
   address: "Talukdar market, puraton bus stand, Tangail",
   googleMapsAddress:
-    "https://www.google.com/maps/place/Al+Shefa+Clinic+and+Nursing+Home/@24.2516206,89.9199723,17z",
+    "https://www.google.com/maps/place/Talukder+Clinic+And+Nursing+Home/@24.2516947,89.9199099,8z/data=!4m10!1m2!2m1!1stalukdar+clinic+%26+nursing+home!3m6!1s0x39fdfb00115d71b3:0x397c3117629234b4!8m2!3d24.2516603!4d89.9199755!15sCh50YWx1a2RhciBjbGluaWMgJiBudXJzaW5nIGhvbWWSAQhob3NwaXRhbOABAA!16s%2Fg%2F11yy3jhlby?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D",
   googleMapsEmbed:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3637.718554294158!2d89.91739201180822!3d24.25162057824139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fdfbe4b10d7985%3A0x40db65bb201a62c4!2sAl%20shefa%20clinic%20and%20Nursing%20Home!5e0!3m2!1sen!2sbd!4v1777729538874!5m2!1sen!2sbd",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1862510.814326439!2d89.9199099!3d24.2516947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fdfb00115d71b3%3A0x397c3117629234b4!2sTalukder%20Clinic%20And%20Nursing%20Home!5e0!3m2!1sen!2sbd!4v1778565561328!5m2!1sen!2sbd",
   workingHours: {
     weekday: "8:00 AM - 10:00 PM",
     weekend: "24/7",

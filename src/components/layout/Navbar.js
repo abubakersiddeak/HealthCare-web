@@ -24,12 +24,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center gap-1">
-            <Image
-              src={"/AL-SEHFALOGO.svg"}
-              alt="logo"
-              height={40}
-              width={40}
-            />
+            <Image src={"/tcnh.png"} alt="logo" height={40} width={40} />
             <Link
               href="/"
               className="text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors"
