@@ -30,7 +30,7 @@ export const DOCTORS = [
     accent: "from-emerald-500 to-teal-400",
   },
   {
-    id: 3,
+    id: 4,
     avatar:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9SNCW0bhGTIaak6oJ8OPqxEM1PuDm2X1zNfWud4E2SfLTXHds",
     name: "Dr. Md. Mokhlesur Rahman",
@@ -40,7 +40,7 @@ export const DOCTORS = [
     accent: "from-emerald-500 to-teal-400",
   },
   {
-    id: 3,
+    id: 5,
     avatar:
       "https://avatarairlines.com/wp-content/uploads/2020/05/Female-Placeholder.png",
     name: "Dr. Aklima Khan Sumi",
@@ -50,7 +50,7 @@ export const DOCTORS = [
     accent: "from-emerald-500 to-teal-400",
   },
   {
-    id: 3,
+    id: 6,
     avatar:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpJnqMB3zwI00qOQRWMrAyKqlIf5HRjHARig&s",
     name: "Dr. Sufia Begum",
@@ -60,7 +60,7 @@ export const DOCTORS = [
     accent: "from-emerald-500 to-teal-400",
   },
   {
-    id: 3,
+    id: 7,
     avatar:
       "https://avatarairlines.com/wp-content/uploads/2020/05/Female-Placeholder.png",
     name: "Dr. Aklima Khan Sumi",

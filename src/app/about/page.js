@@ -27,7 +27,7 @@ export default function About() {
             <h2 className="text-4xl font-black text-gray-900 mb-6 leading-tight">
               A New Chapter in Healthcare: <br />
               <span className="text-blue-600">
-                From Al-Shifa to Talukdar Clinic
+                From Al-Shifa to Talukder Clinic
               </span>
             </h2>
             <p className="text-gray-700 text-lg mb-4">
