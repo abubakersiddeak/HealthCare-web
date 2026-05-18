@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { transporter } from "@/lib/mailer";
+import { getTransporter } from "@/lib/mailer";
 
 export async function POST(request) {
   try {
@@ -11,6 +11,7 @@ export async function POST(request) {
       ? `📅 New Appointment Request: ${name}`
       : `✉️ New Contact Message: ${name}`;
 
+    const transporter = getTransporter();
     const mailOptions = {
       from: `"${name}" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
